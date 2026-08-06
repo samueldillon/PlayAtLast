@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+.wrangler/
+*.local
+service-account*.json
+.DS_Store
+worker/.dev.vars

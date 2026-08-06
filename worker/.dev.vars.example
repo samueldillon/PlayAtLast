@@ -1,0 +1,3 @@
+# Copy to worker/.dev.vars for local `npm run worker:dev` testing.
+# .dev.vars is gitignored - never commit your real service account JSON.
+FIREBASE_SERVICE_ACCOUNT_JSON={"type":"service_account","client_email":"...","private_key":"...","token_uri":"https://oauth2.googleapis.com/token"}

@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /daily_results/{resultId} {
+      allow read: if true;   // anonymous + aggregate - fine to expose
+      allow write: if false; // ONLY the Worker (service account) writes here
+    }
+    match /daily_stats/{dateId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false; // deny everything else by default
+    }
+  }
+}
